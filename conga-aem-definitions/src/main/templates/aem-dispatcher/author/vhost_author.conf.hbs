@@ -2,6 +2,11 @@
     "httpd.serverName"
 ~}}
 
+{{~#each httpd.listenPorts}}
+# custom listen ports
+Listen {{this}}
+{{~/each}}
+
 # Virtual host for author (HTTP)
 <VirtualHost {{httpd.serverListenAddress}}:{{httpd.serverPort}}>
 
